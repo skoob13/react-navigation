@@ -37,6 +37,7 @@ type Props = {
   labelStyle?: Style,
   tabStyle?: Style,
   showIcon: boolean,
+  onPress?: () => void,
 };
 
 export default class TabBarBottom
@@ -125,6 +126,7 @@ export default class TabBarBottom
       position,
       navigation,
       jumpToIndex,
+      onPress,
       activeBackgroundColor,
       inactiveBackgroundColor,
       style,
@@ -152,7 +154,7 @@ export default class TabBarBottom
           return (
             <TouchableWithoutFeedback
               key={route.key}
-              onPress={() => jumpToIndex(index)}
+              onPress={() => onPress ? onPress(route, jumpToIndex) : jumpToIndex(index)}
             >
               <Animated.View
                 style={[

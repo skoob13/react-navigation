@@ -35,6 +35,7 @@ const TabNavigator = (
     tabBarPosition,
     tabBarOptions,
     swipeEnabled,
+    tabBarOnPress,
     animationEnabled,
     lazy,
     ...tabsConfig
@@ -53,6 +54,7 @@ const TabNavigator = (
       tabBarComponent={tabBarComponent}
       tabBarPosition={tabBarPosition}
       tabBarOptions={tabBarOptions}
+      tabBarOnPress={tabBarOnPress}
       swipeEnabled={swipeEnabled}
       animationEnabled={animationEnabled}
       lazy={lazy}

@@ -22,6 +22,7 @@ export type TabViewConfig = {
   swipeEnabled?: boolean,
   animationEnabled?: boolean,
   lazy?: boolean,
+  tabBarOnPress?: () => void,
 };
 
 export type TabScene = {
@@ -36,6 +37,7 @@ type Props = {
   tabBarPosition?: 'top' | 'bottom',
   tabBarOptions?: {},
   swipeEnabled?: boolean,
+  tabBarOnPress?: () => void,
   animationEnabled?: boolean,
   lazy?: boolean,
 
@@ -121,6 +123,7 @@ class TabView extends PureComponent<void, Props, void> {
       <TabBarComponent
         {...props}
         {...tabBarOptions}
+        onPress={this.props.tabBarOnPress}
         navigation={this.props.navigation}
         getLabel={this._getLabel}
         renderIcon={this._renderIcon}
